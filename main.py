@@ -50,3 +50,4 @@ def n2x(number):
 for i in range(0, 1000000, 1):
     if i <= 900:
         n2x(i)
+        
