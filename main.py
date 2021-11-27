@@ -86,8 +86,21 @@ def n2x(number):
                 print("e", one_dig_list_x[u])
         else:
             print("")
+    elif len(number_in_string) == 5:
+        cm = int(number / 10000)
+        m = int((number % 10000) / 1000)
+        c = int((number % 1000) / 100)
+        d = int((number % 100) / 10)
+        u = number % 10
+
+        if cm == 1:
+            print(ten_to_nineteen[m], "mil", end=" ")
+            if c == 0 and d == 0 and u == 0:
+                print("")
+            else:
+                print("e ...")
 
 for i in range(0, 1000000, 1):
-    if i <= 9999:
+    if i > 9000 and i <= 11010:
         n2x(i)
         
