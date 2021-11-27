@@ -44,10 +44,50 @@ def n2x(number):
                             print(f"e {tens_place_list_x[d - 2]}", end=" ")
                             if u != 0:
                                 print(f"e {one_dig_list_x[u]}")
+            else:
+                print("")
+    elif len(number_in_string) == 4:
+        m = int(number / 1000)
+        c = int((number % 1000) / 100)
+        d = int((number % 100) / 10)
+        u = number % 10
 
+        print(one_dig_list_x[m], "mil", end=" ")
 
+        if c != 0 or d != 0 or u != 0:
+            if c != 0:
+                if c == 1 and d == 0 and u == 0:
+                    print("e cem", end="")
+                else:
+                    print("e", hundreds_house_x[c - 1], end=" ")
+                if d != 0:
+                    if d == 1:
+                        print("e", ten_to_nineteen[u])
+                    else:
+                        print("e", tens_place_list_x[d - 2], end=" ")
+                        if u != 0:
+                            print("e", one_dig_list_x[u])
+                        else:
+                            print("")
+                elif u != 0:
+                    print("e", one_dig_list_x[u])
+                else:
+                    print("")
+            elif d != 0:
+                if d == 1:
+                    print("e", ten_to_nineteen[u])
+                else:
+                    print("e", tens_place_list_x[d - 2], end=" ")
+                    if u != 0:
+                        print("e", one_dig_list_x[u])
+                    else:
+                        print("")
+            else:
+                print("e", one_dig_list_x[u])
+        else:
+            print("")
 
 for i in range(0, 1000000, 1):
-    if i <= 900:
+    if i <= 9999:
         n2x(i)
         
