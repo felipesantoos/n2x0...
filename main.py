@@ -98,9 +98,37 @@ def n2x(number):
             if c == 0 and d == 0 and u == 0:
                 print("")
             else:
-                print("e ...")
+                if c != 0:
+                    if c == 1 and d == 0 and u == 0:
+                        print("e cem", end=" ")
+                    else:
+                        print("e", hundreds_house_x[c - 1], end=" ")
+                    if d != 0:
+                        if d == 1:
+                            print("e", ten_to_nineteen[u])
+                        else:
+                            print("e", tens_place_list_x[d - 2], end=" ")
+                            if u != 0:
+                                print("e", one_dig_list_x[u])
+                            else:
+                                print("")
+                    elif u != 0:
+                        print("e", one_dig_list_x[u])
+                    else:
+                        print("")
+                elif d !=0:
+                    if d == 1:
+                        print("e", ten_to_nineteen[u])
+                    else:
+                        print("e", tens_place_list_x[d - 2], end=" ")
+                        if u != 0:
+                            print("e", one_dig_list_x[u])
+                        else:
+                            print("")
+                elif u != 0:
+                    print("e", one_dig_list_x[u])
 
 for i in range(0, 1000000, 1):
-    if i > 9000 and i <= 11010:
+    if i > 10000 and i <= 20000:
         n2x(i)
         
