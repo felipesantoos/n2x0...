@@ -127,8 +127,81 @@ def n2x(number):
                             print("")
                 elif u != 0:
                     print("e", one_dig_list_x[u])
+        else:
+            print(tens_place_list_x[cm - 2], end=" ")
+            if m == 0 and c == 0 and d == 0 and u == 0:
+                print("mil")
+            else:
+                if m != 0:
+                    print("e", one_dig_list_x[m], "mil", end=" ")
+                    if c != 0:
+                        if c == 1 and d == 0 and u == 0:
+                            print("e cem")
+                        else:
+                            print("e", hundreds_house_x[c - 1], end=" ")
+                            if d != 0:
+                                if d == 1:
+                                    print("e", ten_to_nineteen[u])
+                                else:
+                                    print("e", tens_place_list_x[d - 2], end=" ")
+                                    if u != 0:
+                                        print("e", one_dig_list_x[u])
+                                    else:
+                                        print("")
+                            elif u != 0:
+                                print("e", one_dig_list_x[u])
+                            else:
+                                print("")
+                    elif d != 0:
+                        if d == 1:
+                            print("e", ten_to_nineteen[u])
+                        else:
+                            print("e", tens_place_list_x[d - 2], end=" ")
+                            if u != 0:
+                                print("e", one_dig_list_x[u])
+                            else:
+                                print("")
+                    elif u != 0:
+                        print("e", one_dig_list_x[u])
+                    else:
+                        print("")
+                elif c != 0:
+                    print("mil", end=" ")
+                    if c == 1 and d == 0 and u == 0:
+                        print("e cem")
+                    else:
+                        print("e", hundreds_house_x[c - 1], end=" ")
+                        if d != 0:
+                            if d == 1:
+                                print("e", ten_to_nineteen[u])
+                            else:
+                                print("e", tens_place_list_x[d - 2], end=" ")
+                                if u != 0:
+                                    print("e", one_dig_list_x[u])
+                                else:
+                                    print("")
+                        elif u != 0:
+                            print("e", one_dig_list_x[u])
+                        else:
+                            print("")
+                elif d != 0:
+                    if d == 1:
+                        print("mil e", ten_to_nineteen[u])
+                    else:
+                        print("mil e", tens_place_list_x[d - 2], end=" ")
+                        if u != 0:
+                            print("e", one_dig_list_x[u])
+                        else:
+                            print("")
+                elif u != 0:
+                    print("mil e", one_dig_list_x[u])
+                else:
+                    print("")
+    if len(number_in_string) == 6:
+        print("6 dígitos")
+
 
 for i in range(0, 1000000, 1):
-    if i > 10000 and i <= 20000:
+    if i > 89999 and i <= 100001:
         n2x(i)
         
